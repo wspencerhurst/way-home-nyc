@@ -1,6 +1,6 @@
 # Way Home NYC
 
-**AI reads posts, photos & official alerts, fact-checks them, and maps closures by trust level. When reports agree, routes home on foot update live. Unlike Waze: no app, any platform, city-verified.**
+**Public website: AI reads posts, photos & official alerts, fact-checks them, and maps closures by trust. Operators confirm in one click; walking routes update live. Unlike Waze: no app, any platform.**
 
 **Live demo:** https://claude.ai/artifact/HhPQ8ebmMaLTqQfuDRpGKU
 
