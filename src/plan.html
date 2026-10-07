@@ -1,0 +1,80 @@
+<!-- ================= PLAN ================= -->
+<section id="plan" class="plan" hidden>
+  <div>
+    <h2>The problem on a crowd night</h2>
+    <div class="truths">
+      <div><b>Closures are improvised.</b>NYPD closes streets as crowds move and decides each closure on the spot. No complete list exists ahead of time, and DOT's advisories don't include emergency closures.</div>
+      <div><b>Information is scattered.</b>Notify NYC texts, MTA alerts, DOT advisories, 511NY, X, Instagram, TikTok, Reddit and Citizen each show one piece. None of them answers "how do I get home?"</div>
+      <div><b>People are on foot, with weak signal.</b>Cell networks jam and batteries run low. Driving apps miss barricades and closed subway entrances.</div>
+    </div>
+  </div>
+
+  <div>
+    <h2>How it works</h2>
+    <div class="flow">
+      <div><b>1 · Ingest</b>Official feeds, public posts tagged with event keywords or posted near the area, 311 calls, DOT camera snapshots, and reports sent through the page.</div>
+      <div><b>2 · Understand</b>An LLM turns each post or photo into a structured record: what happened, where (matched to a real block), who it affects, and when.</div>
+      <div><b>3 · Verify</b>Five checks: time, place, media, source and corroboration. A post that fails any of them never reaches the public map.</div>
+      <div><b>4 · Fuse</b>Records are grouped by block and 10-minute window. Each cluster gets a trust level and fades out over time unless new reports refresh it.</div>
+      <div><b>5 · Publish</b>Operators confirm a cluster with one click. The result goes to the map, the routes, Notify NYC and an open closure feed that Waze, Google and Apple can read.</div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Making sense of messy, multimodal posts</h2>
+    <ul class="tight">
+      <li><b>NYC street language.</b> "Outside the Garden", "34th &amp; 7th", "Herald", "by the PATH": the LLM extracts the place as written, and the city's geocoder (NYC Geoclient / LION street centerline) snaps it to a real block or intersection. The LLM never guesses coordinates.</li>
+      <li><b>Reading photos.</b> The model reads street signs, storefronts, subway signage, barricades, crowd density, day or night, and weather, then checks that against what the caption claims.</li>
+      <li><b>Two model tiers for cost and scale.</b> A fast, cheap model screens every post for relevance. Only the roughly 10% that mention a place and a closure go to a stronger model, along with every photo. Duplicate reposts are collapsed before any model sees them.</li>
+      <li><b>Structured output only.</b> Each post becomes one fixed JSON record: type, location, affects, time and checks. Software clusters and scores those records, so the model's prose never drives decisions.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Keeping fakes and stale posts out</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Check</th><th>What we test</th><th>Catches</th></tr></thead>
+      <tbody>
+        <tr><td><b>Time</b></td><td>Post time and photo metadata are after the event trigger (the final buzzer). Reports fade after 20 minutes without new confirmation.</td><td>Posts and photos from June's parade, or from last year</td></tr>
+        <tr><td><b>Place</b></td><td>The claimed spot, the geotag and what the photo shows (signs, landmarks) all agree.</td><td>"Broadway closed" posts that are really about downtown</td></tr>
+        <tr><td><b>Media</b></td><td>Perceptual hash against an archive of past events plus reverse image search. Visual cues: daylight at midnight, ticker tape, signs of AI generation.</td><td>Recycled and AI-generated images</td></tr>
+        <tr><td><b>Source</b></td><td>Account age and past accuracy. Bursts of near-identical posts from new accounts.</td><td>Bots, coordinated hoaxes</td></tr>
+        <tr><td><b>Corroboration</b></td><td>At least 3 independent sources within 150 m and 10 minutes, from at least 2 platforms, or a camera or officer on the ground.</td><td>Lone false reports</td></tr>
+      </tbody>
+    </table></div>
+    <p class="rule" style="margin-top:12px">Safety rule: crowd reports can only steer people <i>away</i> from a street, never <i>toward</i> one. A dangerous claim (a bomb threat, a stampede) is never published from social media. It goes straight to NYPD and NYC Emergency Management to check.</p>
+  </div>
+
+  <div>
+    <h2>Built for millions of phones at once</h2>
+    <ul class="tight">
+      <li><b>One small file.</b> Every 30 seconds the map state is published as one static snapshot of about 50 KB, served from a CDN. A million readers cost about the same as ten, and nothing breaks under load.</li>
+      <li><b>No app to install.</b> A Notify NYC message or Wireless Emergency Alert (WEA) carries the link. The page loads on a weak 3G connection and keeps working offline once loaded.</li>
+      <li><b>Text fallback.</b> Text <code>HOME QUEENS</code> to a city short code and get the route back as two lines of text, for people with no data connection.</li>
+      <li><b>Push to the apps people already use.</b> Publish closures as an open feed in Waze's closure format (CIFS) and as GeoJSON, so Google Maps, Apple Maps, Citymapper and Waze update too.</li>
+      <li><b>Access for everyone.</b> The 10 languages NYC Local Law 30 requires, step-free routes built from MTA elevator status, and large text and high contrast.</li>
+      <li><b>Works anywhere in the city.</b> Events are configs: an area, a start time and a keyword list. The same system covers the Marathon, the July 4th fireworks, New Year's Eve, parades and the US Open.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Run of show</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>When</th><th>Who</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>Clinching game, day before</td><td>NYC Emergency Management</td><td>Load the MSG / Times Square / Herald Square event config. Add NYPD's pre-planned frozen zones as Official items.</td></tr>
+        <tr><td>Final buzzer</td><td>System</td><td>Event clock starts; the Time check now rejects anything posted earlier. Notify NYC sends the link.</td></tr>
+        <tr><td>During</td><td>2 operators at the Emergency Management watch desk</td><td>Review clusters, confirm or dismiss with one click, ask nearby units or cameras to check.</td></tr>
+        <tr><td>All clear</td><td>System + NYPD</td><td>Clusters with no new reports fade out. NYPD's reopenings publish as all-clear updates.</td></tr>
+        <tr><td>Parade day</td><td>Same system</td><td>Load the published route, security screening entrances and MTA station plan the night before. Live reports fill in the rest.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div>
+    <h2>Privacy</h2>
+    <p>We read only public posts and reports people send us on purpose. We keep only the structured record (type, block, time), never names or handles. Raw posts are deleted after 24 hours.</p>
+  </div>
+
+  <p class="small">Real data sources: NYC DOT Special / Weekday / Weekend Traffic Updates on NYC Open Data (<code>t4s6-khpm</code>, <code>vihk-m25f</code>, <code>qhen-5rve</code>), MTA GTFS-realtime service alerts and elevator status, 511NY, Notify NYC, 311, NYC DOT traffic cameras, NYC Geoclient / LION. Background: 2026 Knicks win-night crowds around MSG and 6th Ave; the parade closed every street south of Canal, with 10,000 officers deployed.</p>
+</section>

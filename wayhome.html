@@ -1,0 +1,796 @@
+<title>Way Home NYC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>.leaflet-image-layer,.leaflet-layer,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-pane,.leaflet-pane>canvas,.leaflet-pane>svg,.leaflet-tile,.leaflet-tile-container,.leaflet-zoom-box{position:absolute;left:0;top:0}.leaflet-container{overflow:hidden}.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-tile{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-user-drag:none}.leaflet-tile::selection{background:0 0}.leaflet-safari .leaflet-tile{image-rendering:-webkit-optimize-contrast}.leaflet-safari .leaflet-tile-container{width:1600px;height:1600px;-webkit-transform-origin:0 0}.leaflet-marker-icon,.leaflet-marker-shadow{display:block}.leaflet-container .leaflet-overlay-pane svg{max-width:none!important;max-height:none!important}.leaflet-container .leaflet-marker-pane img,.leaflet-container .leaflet-shadow-pane img,.leaflet-container .leaflet-tile,.leaflet-container .leaflet-tile-pane img,.leaflet-container img.leaflet-image-layer{max-width:none!important;max-height:none!important;width:auto;padding:0}.leaflet-container img.leaflet-tile{mix-blend-mode:plus-lighter}.leaflet-container.leaflet-touch-zoom{-ms-touch-action:pan-x pan-y;touch-action:pan-x pan-y}.leaflet-container.leaflet-touch-drag{-ms-touch-action:pinch-zoom;touch-action:none;touch-action:pinch-zoom}.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom{-ms-touch-action:none;touch-action:none}.leaflet-container{-webkit-tap-highlight-color:transparent}.leaflet-container a{-webkit-tap-highlight-color:rgba(51,181,229,.4)}.leaflet-tile{filter:inherit;visibility:hidden}.leaflet-tile-loaded{visibility:inherit}.leaflet-zoom-box{width:0;height:0;-moz-box-sizing:border-box;box-sizing:border-box;z-index:800}.leaflet-overlay-pane svg{-moz-user-select:none}.leaflet-pane{z-index:400}.leaflet-tile-pane{z-index:200}.leaflet-overlay-pane{z-index:400}.leaflet-shadow-pane{z-index:500}.leaflet-marker-pane{z-index:600}.leaflet-tooltip-pane{z-index:650}.leaflet-popup-pane{z-index:700}.leaflet-map-pane canvas{z-index:100}.leaflet-map-pane svg{z-index:200}.leaflet-vml-shape{width:1px;height:1px}.lvml{behavior:url(#default#VML);display:inline-block;position:absolute}.leaflet-control{position:relative;z-index:800;pointer-events:visiblePainted;pointer-events:auto}.leaflet-bottom,.leaflet-top{position:absolute;z-index:1000;pointer-events:none}.leaflet-top{top:0}.leaflet-right{right:0}.leaflet-bottom{bottom:0}.leaflet-left{left:0}.leaflet-control{float:left;clear:both}.leaflet-right .leaflet-control{float:right}.leaflet-top .leaflet-control{margin-top:10px}.leaflet-bottom .leaflet-control{margin-bottom:10px}.leaflet-left .leaflet-control{margin-left:10px}.leaflet-right .leaflet-control{margin-right:10px}.leaflet-fade-anim .leaflet-popup{opacity:0;-webkit-transition:opacity .2s linear;-moz-transition:opacity .2s linear;transition:opacity .2s linear}.leaflet-fade-anim .leaflet-map-pane .leaflet-popup{opacity:1}.leaflet-zoom-animated{-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0}svg.leaflet-zoom-animated{will-change:transform}.leaflet-zoom-anim .leaflet-zoom-animated{-webkit-transition:-webkit-transform .25s cubic-bezier(0,0,.25,1);-moz-transition:-moz-transform .25s cubic-bezier(0,0,.25,1);transition:transform .25s cubic-bezier(0,0,.25,1)}.leaflet-pan-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-tile{-webkit-transition:none;-moz-transition:none;transition:none}.leaflet-zoom-anim .leaflet-zoom-hide{visibility:hidden}.leaflet-interactive{cursor:pointer}.leaflet-grab{cursor:-webkit-grab;cursor:-moz-grab;cursor:grab}.leaflet-crosshair,.leaflet-crosshair .leaflet-interactive{cursor:crosshair}.leaflet-control,.leaflet-popup-pane{cursor:auto}.leaflet-dragging .leaflet-grab,.leaflet-dragging .leaflet-grab .leaflet-interactive,.leaflet-dragging .leaflet-marker-draggable{cursor:move;cursor:-webkit-grabbing;cursor:-moz-grabbing;cursor:grabbing}.leaflet-image-layer,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-pane>svg path,.leaflet-tile-container{pointer-events:none}.leaflet-image-layer.leaflet-interactive,.leaflet-marker-icon.leaflet-interactive,.leaflet-pane>svg path.leaflet-interactive,svg.leaflet-image-layer.leaflet-interactive path{pointer-events:visiblePainted;pointer-events:auto}.leaflet-container{background:#ddd;outline-offset:1px}.leaflet-container a{color:#0078a8}.leaflet-zoom-box{border:2px dotted #38f;background:rgba(255,255,255,.5)}.leaflet-container{font-family:"Helvetica Neue",Arial,Helvetica,sans-serif;font-size:12px;font-size:.75rem;line-height:1.5}.leaflet-bar{box-shadow:0 1px 5px rgba(0,0,0,.65);border-radius:4px}.leaflet-bar a{background-color:#fff;border-bottom:1px solid #ccc;width:26px;height:26px;line-height:26px;display:block;text-align:center;text-decoration:none;color:#000}.leaflet-bar a,.leaflet-control-layers-toggle{background-position:50% 50%;background-repeat:no-repeat;display:block}.leaflet-bar a:focus,.leaflet-bar a:hover{background-color:#f4f4f4}.leaflet-bar a:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.leaflet-bar a:last-child{border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-bottom:none}.leaflet-bar a.leaflet-disabled{cursor:default;background-color:#f4f4f4;color:#bbb}.leaflet-touch .leaflet-bar a{width:30px;height:30px;line-height:30px}.leaflet-touch .leaflet-bar a:first-child{border-top-left-radius:2px;border-top-right-radius:2px}.leaflet-touch .leaflet-bar a:last-child{border-bottom-left-radius:2px;border-bottom-right-radius:2px}.leaflet-control-zoom-in,.leaflet-control-zoom-out{font:bold 18px 'Lucida Console',Monaco,monospace;text-indent:1px}.leaflet-touch .leaflet-control-zoom-in,.leaflet-touch .leaflet-control-zoom-out{font-size:22px}.leaflet-control-layers{box-shadow:0 1px 5px rgba(0,0,0,.4);background:#fff;border-radius:5px}.leaflet-control-layers-toggle{background-image:url(images/layers.png);width:36px;height:36px}.leaflet-retina .leaflet-control-layers-toggle{background-image:url(images/layers-2x.png);background-size:26px 26px}.leaflet-touch .leaflet-control-layers-toggle{width:44px;height:44px}.leaflet-control-layers .leaflet-control-layers-list,.leaflet-control-layers-expanded .leaflet-control-layers-toggle{display:none}.leaflet-control-layers-expanded .leaflet-control-layers-list{display:block;position:relative}.leaflet-control-layers-expanded{padding:6px 10px 6px 6px;color:#333;background:#fff}.leaflet-control-layers-scrollbar{overflow-y:scroll;overflow-x:hidden;padding-right:5px}.leaflet-control-layers-selector{margin-top:2px;position:relative;top:1px}.leaflet-control-layers label{display:block;font-size:13px;font-size:1.08333em}.leaflet-control-layers-separator{height:0;border-top:1px solid #ddd;margin:5px -10px 5px -6px}.leaflet-default-icon-path{background-image:url(images/marker-icon.png)}.leaflet-container .leaflet-control-attribution{background:#fff;background:rgba(255,255,255,.8);margin:0}.leaflet-control-attribution,.leaflet-control-scale-line{padding:0 5px;color:#333;line-height:1.4}.leaflet-control-attribution a{text-decoration:none}.leaflet-control-attribution a:focus,.leaflet-control-attribution a:hover{text-decoration:underline}.leaflet-attribution-flag{display:inline!important;vertical-align:baseline!important;width:1em;height:.6669em}.leaflet-left .leaflet-control-scale{margin-left:5px}.leaflet-bottom .leaflet-control-scale{margin-bottom:5px}.leaflet-control-scale-line{border:2px solid #777;border-top:none;line-height:1.1;padding:2px 5px 1px;white-space:nowrap;-moz-box-sizing:border-box;box-sizing:border-box;background:rgba(255,255,255,.8);text-shadow:1px 1px #fff}.leaflet-control-scale-line:not(:first-child){border-top:2px solid #777;border-bottom:none;margin-top:-2px}.leaflet-control-scale-line:not(:first-child):not(:last-child){border-bottom:2px solid #777}.leaflet-touch .leaflet-bar,.leaflet-touch .leaflet-control-attribution,.leaflet-touch .leaflet-control-layers{box-shadow:none}.leaflet-touch .leaflet-bar,.leaflet-touch .leaflet-control-layers{border:2px solid rgba(0,0,0,.2);background-clip:padding-box}.leaflet-popup{position:absolute;text-align:center;margin-bottom:20px}.leaflet-popup-content-wrapper{padding:1px;text-align:left;border-radius:12px}.leaflet-popup-content{margin:13px 24px 13px 20px;line-height:1.3;font-size:13px;font-size:1.08333em;min-height:1px}.leaflet-popup-content p{margin:17px 0;margin:1.3em 0}.leaflet-popup-tip-container{width:40px;height:20px;position:absolute;left:50%;margin-top:-1px;margin-left:-20px;overflow:hidden;pointer-events:none}.leaflet-popup-tip{width:17px;height:17px;padding:1px;margin:-10px auto 0;pointer-events:auto;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#fff;color:#333;box-shadow:0 3px 14px rgba(0,0,0,.4)}.leaflet-container a.leaflet-popup-close-button{position:absolute;top:0;right:0;border:none;text-align:center;width:24px;height:24px;font:16px/24px Tahoma,Verdana,sans-serif;color:#757575;text-decoration:none;background:0 0}.leaflet-container a.leaflet-popup-close-button:focus,.leaflet-container a.leaflet-popup-close-button:hover{color:#585858}.leaflet-popup-scrolled{overflow:auto}.leaflet-oldie .leaflet-popup-content-wrapper{-ms-zoom:1}.leaflet-oldie .leaflet-popup-tip{width:24px;margin:0 auto}.leaflet-oldie .leaflet-control-layers,.leaflet-oldie .leaflet-control-zoom,.leaflet-oldie .leaflet-popup-content-wrapper,.leaflet-oldie .leaflet-popup-tip{border:1px solid #999}.leaflet-div-icon{background:#fff;border:1px solid #666}.leaflet-tooltip{position:absolute;padding:6px;background-color:#fff;border:1px solid #fff;border-radius:3px;color:#222;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.4)}.leaflet-tooltip.leaflet-interactive{cursor:pointer;pointer-events:auto}.leaflet-tooltip-bottom:before,.leaflet-tooltip-left:before,.leaflet-tooltip-right:before,.leaflet-tooltip-top:before{position:absolute;pointer-events:none;border:6px solid transparent;background:0 0;content:""}.leaflet-tooltip-bottom{margin-top:6px}.leaflet-tooltip-top{margin-top:-6px}.leaflet-tooltip-bottom:before,.leaflet-tooltip-top:before{left:50%;margin-left:-6px}.leaflet-tooltip-top:before{bottom:0;margin-bottom:-12px;border-top-color:#fff}.leaflet-tooltip-bottom:before{top:0;margin-top:-12px;margin-left:-6px;border-bottom-color:#fff}.leaflet-tooltip-left{margin-left:-6px}.leaflet-tooltip-right{margin-left:6px}.leaflet-tooltip-left:before,.leaflet-tooltip-right:before{top:50%;margin-top:-6px}.leaflet-tooltip-left:before{right:0;margin-right:-12px;border-left-color:#fff}.leaflet-tooltip-right:before{left:0;margin-left:-12px;border-right-color:#fff}@media print{.leaflet-control{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style>
+<style>
+/* Layout: a real street map is the hero; a narrow answer column beside it; tabs switch audience (pitch, public, operator, plan). */
+:root{
+  --bg:#eef1f5; --surface:#ffffff; --ink:#121a2b; --muted:#5b6578; --line:#d5dbe5;
+  --accent:#1d5bd8; --accent-soft:#e3ebfb; --closed:#d4382c; --closed-soft:#fbe6e3;
+  --warn:#a87100; --warn-soft:#fbf0d6; --ok:#1e7d49; --ok-soft:#e0f2e8;
+  --mapbg:#e9ecef; --osmfilter:saturate(.45) contrast(.96);
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d1320; --surface:#151d2e; --ink:#e8ecf3; --muted:#97a1b4; --line:#2a3448;
+  --accent:#6b98ff; --accent-soft:#1b2a4d; --closed:#ff6b5e; --closed-soft:#3a1d1c;
+  --warn:#f0b429; --warn-soft:#3a2e12; --ok:#4cc985; --ok-soft:#143323;
+  --mapbg:#1a2030; --osmfilter:invert(.92) hue-rotate(180deg) saturate(.35) brightness(.95) contrast(.9); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1320; --surface:#151d2e; --ink:#e8ecf3; --muted:#97a1b4; --line:#2a3448;
+  --accent:#6b98ff; --accent-soft:#1b2a4d; --closed:#ff6b5e; --closed-soft:#3a1d1c;
+  --warn:#f0b429; --warn-soft:#3a2e12; --ok:#4cc985; --ok-soft:#143323;
+  --mapbg:#1a2030; --osmfilter:invert(.92) hue-rotate(180deg) saturate(.35) brightness(.95) contrast(.9); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--f-body);padding:0 16px 48px}
+.wrap{max-width:1240px;margin:0 auto}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;padding-block:22px 14px}
+.brand h1{font:800 30px/1 var(--f-display);letter-spacing:-.01em;margin:0}
+.brand p{margin:6px 0 0;color:var(--muted);max-width:62ch}
+.scenario{font:500 12px/1.3 var(--f-mono);color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:6px 10px;background:var(--surface)}
+.scenario b{color:var(--ink);font-weight:500}
+nav.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:18px;overflow-x:auto}
+nav.tabs button{font:600 14px var(--f-body);color:var(--muted);background:none;border:0;border-bottom:3px solid transparent;padding:10px 14px;cursor:pointer;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+button:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tag{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.small{font-size:12px;color:var(--muted)}
+.btn{font:600 14px var(--f-body);border-radius:8px;padding:8px 14px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.btn.good{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.btn.sm{padding:5px 10px;font-size:12px}
+.btn:disabled{opacity:.55;cursor:default}
+.chip{font:600 11px/1 var(--f-mono);letter-spacing:.04em;text-transform:uppercase;border-radius:4px;padding:4px 6px;white-space:nowrap;display:inline-block}
+.chip.official{background:var(--ok-soft);color:var(--ok)}
+.chip.confirmed{background:var(--warn-soft);color:var(--warn)}
+.chip.unverified{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.chip.rejected{background:var(--closed-soft);color:var(--closed)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
+textarea{width:100%;min-height:96px;font:14px/1.45 var(--f-body);border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--bg);color:var(--ink);resize:vertical}
+label.file{display:inline-flex;gap:6px;align-items:center;font-size:13px;color:var(--muted);cursor:pointer;min-width:0}
+label.file input{max-width:200px;font-size:12px}
+
+/* ---------- Get home ---------- */
+.home{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:900px){.home{grid-template-columns:1fr}.home .mapcol{order:-1}}
+.ask{font:700 20px/1.2 var(--f-display);margin:2px 0 6px}
+.where{font-size:13px;color:var(--muted);margin-bottom:12px}
+.dests{display:flex;flex-wrap:wrap;gap:6px}
+.dests button{font:500 14px var(--f-body);border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:7px 12px;cursor:pointer}
+.dests button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.answer{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+.answer h3{font:700 18px/1.25 var(--f-display);margin:0 0 4px}
+.eta{font:500 13px var(--f-mono);color:var(--muted)}
+ol.steps{margin:12px 0 0;padding:0;list-style:none;counter-reset:s;display:grid;gap:8px}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
+ol.steps li::before{content:counter(s);font:700 12px/24px var(--f-mono);text-align:center;border-radius:50%;background:var(--accent-soft);color:var(--accent);width:24px;height:24px}
+.stepimg{margin-top:6px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.stepimg img{display:block;width:100%;height:120px;object-fit:cover}
+.stepimg div{font-size:11px;color:var(--muted);padding:4px 8px}
+.avoid{margin-top:12px;font-size:13px;color:var(--muted);line-height:1.9}
+.banner{margin-top:12px;border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.4}
+.banner.warn{background:var(--warn-soft);border:1px solid var(--warn)}
+.banner.upd{background:var(--accent-soft);border:1px solid var(--accent)}
+.reportbox{margin-top:14px;border-top:1px solid var(--line);padding-top:12px;display:grid;gap:8px}
+.reportrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.result{font-size:13px;border-radius:8px;background:var(--bg);padding:10px 12px;display:grid;gap:6px}
+
+.mapcol{display:grid;gap:10px;min-width:0}
+.maphead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.seg button{font:600 12px var(--f-body);border:0;background:none;color:var(--muted);padding:6px 10px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+#map{height:min(640px,72vh);min-height:380px;border-radius:12px;border:1px solid var(--line);background:var(--mapbg);overflow:hidden}
+.leaflet-container{font:13px/1.4 var(--f-body);background:var(--mapbg)}
+.leaflet-pane .base.osm{filter:var(--osmfilter)}
+.leaflet-control-attribution{font-size:10px}
+path.cl{stroke:var(--closed);stroke-linecap:round;stroke-linejoin:round;fill:none}
+path.cl.confirmed{stroke-dasharray:12 9}
+path.cl.unverified{stroke-dasharray:2 9;opacity:.9}
+path.clhalo{stroke:#fff;opacity:.85;fill:none}
+path.area{stroke:var(--closed);fill:var(--closed);fill-opacity:.18}
+path.area.confirmed{stroke-dasharray:6 5}
+path.route{stroke:var(--accent);fill:none;stroke-linejoin:round;stroke-linecap:round}
+path.routehalo{stroke:#fff;fill:none;opacity:.95;stroke-linejoin:round}
+.pin{width:40px;height:40px;border-radius:50%;border:3px solid var(--closed);background:var(--surface) center/cover no-repeat;box-shadow:0 2px 8px rgba(0,0,0,.35);display:grid;place-items:center;font:800 18px var(--f-display);color:var(--closed);cursor:pointer}
+.pin.confirmed{border-style:dashed}
+.pin.unverified{border-color:var(--muted);color:var(--muted);border-style:dotted}
+.pin.official{border-color:var(--closed)}
+.stn{display:inline-flex;align-items:center;gap:4px;white-space:nowrap;font:700 11px/1 var(--f-body);background:var(--surface);color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:4px 7px;box-shadow:0 1px 4px rgba(0,0,0,.25);transform:translate(-50%,-50%);width:max-content}
+.stn.open{border-color:var(--ok)}
+.stn.off{border-color:var(--closed);color:var(--closed);text-decoration:line-through}
+.stn.dest{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.you{width:18px;height:18px;border-radius:50%;background:var(--accent);border:3px solid #fff;box-shadow:0 0 0 8px rgba(29,91,216,.25)}
+.leaflet-div-icon{background:none;border:0}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--surface);color:var(--ink)}
+.leaflet-popup-content{margin:0;width:280px!important}
+.leaflet-popup-content-wrapper{padding:0;overflow:hidden;border-radius:10px}
+.pop img{display:block;width:100%;height:160px;object-fit:cover}
+.pop .pb{padding:10px 12px;display:grid;gap:5px}
+.pop b{font:700 15px/1.25 var(--f-display)}
+.pop p{margin:0;font-size:13px}
+.credit{font-size:10.5px;color:var(--muted);line-height:1.35}
+.feed{display:grid;gap:0}
+.item{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;font-size:13px;padding:8px 6px;border-top:1px solid var(--line);cursor:pointer;background:none;border-left:0;border-right:0;border-bottom:0;text-align:left;color:var(--ink);font-family:inherit}
+.item:hover{background:var(--surface)}
+.item time{font:500 12px var(--f-mono);color:var(--muted);white-space:nowrap}
+
+/* ---------- Operator ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:16px}
+@media (max-width:700px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+.stat b{display:block;font:700 24px/1.1 var(--f-display);font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+.ops{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:900px){.ops{grid-template-columns:1fr}}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.presets button{font:500 12px var(--f-body);border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:6px;padding:5px 9px;cursor:pointer}
+.queue{display:grid;gap:12px}
+.q{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:12px 16px}
+.q.noimg{grid-template-columns:minmax(0,1fr)}
+@media (max-width:640px){.q{grid-template-columns:1fr}}
+.q.rejected{border-left-color:var(--closed)}
+.q.official{border-left-color:var(--ok)}
+.q.new{border-left-color:var(--accent)}
+.qmain{display:grid;gap:9px;min-width:0}
+.qimg img{display:block;width:100%;height:130px;object-fit:cover;border-radius:8px}
+.qimg .credit{margin-top:4px}
+.qh{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.qh h3{margin:0;font:700 17px/1.25 var(--f-display)}
+.srcs{font:500 12px var(--f-mono);color:var(--muted)}
+.read{font-size:13px;background:var(--bg);border-radius:6px;padding:6px 9px}
+.checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:5px 16px;font-size:13px}
+.ck{display:grid;grid-template-columns:16px 1fr;gap:6px}
+.ck i{font-style:normal;font-weight:700}
+.ck.pass i{color:var(--ok)} .ck.warn i{color:var(--warn)} .ck.fail i{color:var(--closed)}
+.conf{display:flex;align-items:center;gap:8px;font:500 12px var(--f-mono);color:var(--muted)}
+.bar{width:110px;height:6px;background:var(--bg);border-radius:3px;overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;background:var(--accent)}
+.qa{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pub{font-size:13px;color:var(--ok)}
+
+/* ---------- Pitch ---------- */
+.slide{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(20px,4vw,48px);min-height:min(560px,calc(100vh - 230px));display:flex;flex-direction:column;gap:22px;justify-content:center}
+.slide:not(.on){display:none}
+.sn{font:500 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.slide h2{font:800 clamp(24px,3.4vw,40px)/1.12 var(--f-display);letter-spacing:-.015em;margin:0;max-width:26ch;text-wrap:balance}
+.slide.wide h2{max-width:34ch;font-size:clamp(22px,2.8vw,32px)}
+.s1{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:center}
+@media (max-width:860px){.s1{grid-template-columns:1fr}}
+.s1 figure{margin:0}
+.s1 img{width:100%;border-radius:10px;display:block;aspect-ratio:4/3;object-fit:cover}
+.s1 figcaption{font-size:11px;color:var(--muted);margin-top:4px}
+.s3{display:grid;gap:14px}
+.s3 div,.tiers div{border-top:3px solid var(--closed);padding-top:8px;font-size:15px;color:var(--muted)}
+.s3 b,.tiers b{display:block;color:var(--ink);font:700 18px/1.25 var(--f-display);margin-bottom:3px}
+.pipe{display:grid;grid-template-columns:1fr auto 1fr auto 1.15fr auto 1fr;gap:10px;align-items:stretch}
+.pipe>div{background:var(--bg);border-radius:10px;padding:14px;font-size:14px;color:var(--muted)}
+.pipe>div b{display:block;color:var(--ink);font:700 16px/1.25 var(--f-display);margin-bottom:6px}
+.pipe>div.hi{background:var(--accent-soft);outline:2px solid var(--accent)}
+.pipe>span{align-self:center;font:700 22px var(--f-display);color:var(--muted)}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tiers div{border-top-color:var(--line)}
+.tiers .chip{margin-bottom:8px}
+.sp{font-size:16px;max-width:75ch;margin:0}
+.deckctl{display:flex;align-items:center;gap:10px;margin-top:12px;flex-wrap:wrap}
+.dots{display:flex;gap:6px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--line);display:block}
+.dots i.on{background:var(--accent)}
+@media (max-width:760px){.tiers{grid-template-columns:1fr}.pipe{grid-template-columns:1fr}.pipe>span{transform:rotate(90deg);justify-self:center}}
+
+/* ---------- Plan ---------- */
+.plan{display:grid;gap:22px;max-width:900px}
+.plan h2{font:800 22px/1.2 var(--f-display);margin:0 0 8px;text-wrap:balance}
+.plan p{margin:0 0 8px;max-width:68ch}
+.truths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.truths{grid-template-columns:1fr}}
+.truths div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+.truths b{display:block;font:700 15px var(--f-display);margin-bottom:4px}
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+@media (max-width:760px){.flow{grid-template-columns:1fr}}
+.flow div{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:8px;padding:12px;font-size:13px}
+.flow b{display:block;font:700 15px var(--f-display);margin-bottom:4px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 12px var(--f-mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+ul.tight{margin:0;padding-left:18px;display:grid;gap:6px;max-width:72ch}
+.rule{background:var(--accent-soft);border-radius:10px;padding:14px 16px;font-weight:500}
+code{font:13px var(--f-mono)}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="brand">
+    <h1>Way Home</h1>
+    <p>A live street map for big crowd nights in NYC. It reads official alerts and what people post, checks what's real, and reroutes everyone on foot in real time.</p>
+  </div>
+  <div class="scenario">Demo · <b>Knicks win night</b> · Midtown · <b>11:48 PM</b> · final buzzer 11:21 PM</div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button role="tab" aria-selected="true" data-tab="pitch">Pitch</button>
+  <button role="tab" aria-selected="false" data-tab="home">Get home</button>
+  <button role="tab" aria-selected="false" data-tab="ops">Operator</button>
+  <button role="tab" aria-selected="false" data-tab="plan">Plan</button>
+</nav>
+
+<!-- ================= PITCH ================= -->
+<section id="pitch">
+  <article class="slide">
+    <div class="sn">1 / 4 · The problem</div>
+    <div class="s1">
+      <div style="display:grid;gap:18px">
+        <h2>On a crowd night, the streets change every minute, and nobody has the whole picture.</h2>
+        <div class="s3">
+          <div><b>Improvised</b>NYPD closes streets as crowds move. There's no full list, and DOT's advisories leave out emergency closures.</div>
+          <div><b>Scattered</b>The facts are split across Notify NYC, MTA alerts, X, Instagram, Reddit and 311.</div>
+          <div><b>On foot</b>People are walking, on jammed cell networks. Driving apps can't see barricades or closed subway entrances.</div>
+        </div>
+      </div>
+      <figure><img src="photos/crowd-7av-31st.jpg" alt="Night crowd filling 7th Ave at W 31st St outside Madison Square Garden"><figcaption>7th Ave &amp; W 31st St, 11:34 PM, June 3, 2026, after the Finals watch party. Photo: Demetri Andriani, CC BY-SA 4.0</figcaption></figure>
+    </div>
+  </article>
+  <article class="slide">
+    <div class="sn">2 / 4 · The solution</div>
+    <h2>Way Home: one link, one question, one route.</h2>
+    <div class="pipe">
+      <div><b>Everything people already post</b>Posts, photos and videos on X, Instagram, TikTok and Reddit, plus 311 calls and reports sent through the page</div>
+      <span>+</span>
+      <div><b>Every official feed</b>NYPD and DOT closures, MTA alerts, 511NY, traffic cameras</div>
+      <span>→</span>
+      <div class="hi"><b>AI reads and verifies</b>Turns each post or photo into what happened, on which block and when, then checks that it's real</div>
+      <span>→</span>
+      <div><b>"Where are you headed?"</b>A walking route to an open station entrance, sent by link, SMS, Notify NYC and Waze</div>
+    </div>
+    <p class="sp">Nobody needs to install anything. People keep posting the way they already do, and we read it.</p>
+  </article>
+  <article class="slide">
+    <div class="sn">3 / 4 · How routes change live</div>
+    <h2>Crowd reports reroute people within minutes, and every item shows how trustworthy it is.</h2>
+    <div class="tiers">
+      <div><span class="chip unverified">Unverified</span><b>1–2 reports</b>Shown on the map as a warning. Routes don't change yet.</div>
+      <div><span class="chip confirmed">Confirmed</span><b>3+ independent reports from 2+ platforms within 10 min</b>Routes start avoiding it automatically. This is the crowd-sourced reroute.</div>
+      <div><span class="chip official">Official</span><b>NYPD, DOT or MTA, or one operator click</b>Treated as a hard closure. Sent to Notify NYC and map apps.</div>
+    </div>
+    <p class="sp"><b>Five checks on every post:</b> time (after the final buzzer?) · place (does the photo match the claimed street?) · media (recycled from the June parade? AI-made?) · source (part of a bot burst?) · corroboration. Reports fade out after 20 minutes. Crowd data can only steer people <i>away</i> from a street, never toward one.</p>
+  </article>
+  <article class="slide wide">
+    <div class="sn">4 / 4 · Why this, not just Waze</div>
+    <h2>Waze reroutes cars using reports from its own users. Way Home reroutes crowds on foot, using what the whole city is already posting.</h2>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Waze</th><th>Way Home</th></tr></thead>
+      <tbody>
+        <tr><td>Who it routes</td><td>Drivers</td><td>People walking, to an <b>open</b> station entrance</td></tr>
+        <tr><td>Where reports come from</td><td>Taps inside the app</td><td>Any post, photo or video on any platform, plus official feeds</td></tr>
+        <tr><td>Understanding</td><td>Fixed report buttons</td><td>AI reads slang, street signs and photos</td></tr>
+        <tr><td>Trust</td><td>User votes</td><td>5 checks, 3 trust levels, the city has the final say</td></tr>
+        <tr><td>Reach</td><td>Requires the app</td><td>A link, SMS or emergency alert. It also <b>feeds Waze, Google and Apple Maps</b></td></tr>
+      </tbody>
+    </table></div>
+    <p class="sp">Works for any event, anywhere in NYC: the Marathon, July 4th, New Year's Eve, parades. A new event is a config, not new code.</p>
+  </article>
+  <div class="deckctl">
+    <button class="btn" id="prev" aria-label="Previous slide">←</button>
+    <span id="dots" class="dots"></span>
+    <button class="btn primary" id="next" aria-label="Next slide">→</button>
+    <span class="small">Arrow keys work too</span>
+  </div>
+</section>
+
+<!-- ================= GET HOME ================= -->
+<section id="home" class="home" hidden>
+  <div class="panel">
+    <div class="tag">For the public · no app needed</div>
+    <div class="ask">Where are you headed?</div>
+    <div class="where">You're at <b>7th Ave &amp; W 31st St</b>, outside the Garden.</div>
+    <div class="dests" id="dests"></div>
+    <div class="answer" id="answer"></div>
+    <div class="reportbox">
+      <div class="reportrow"><button class="btn" id="reportToggle">Report what you see</button><span class="small">Or text: <b>HOME BROOKLYN</b></span></div>
+      <div id="reportForm" hidden style="display:grid;gap:8px">
+        <textarea id="rptText" aria-label="What do you see?" placeholder="e.g. Cops blocking 8th Ave at 26th, can't get through"></textarea>
+        <div class="reportrow"><label class="file">Photo <input type="file" id="rptPhoto" accept="image/*"></label><button class="btn primary" id="rptSend">Send report</button></div>
+        <div class="small">Your location is attached. Your report is checked against others before it changes anyone's route.</div>
+      </div>
+      <div id="rptResult"></div>
+    </div>
+  </div>
+  <div class="mapcol">
+    <div class="maphead">
+      <div class="legend">
+        <span><svg width="28" height="8"><line x1="2" y1="4" x2="26" y2="4" stroke="var(--closed)" stroke-width="5" stroke-linecap="round"/></svg>Official</span>
+        <span><svg width="28" height="8"><line x1="2" y1="4" x2="26" y2="4" stroke="var(--closed)" stroke-width="5" stroke-dasharray="7 5"/></svg>Confirmed</span>
+        <span><svg width="28" height="8"><line x1="2" y1="4" x2="26" y2="4" stroke="var(--closed)" stroke-width="4" stroke-dasharray="1 6" stroke-linecap="round"/></svg>Unverified</span>
+        <span><svg width="28" height="8"><line x1="2" y1="4" x2="26" y2="4" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/></svg>Your route</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <button class="btn sm" id="play">▶ Play next 2 min</button>
+        <div class="seg" role="group" aria-label="Map style"><button aria-pressed="true" data-base="osm">Map</button><button aria-pressed="false" data-base="sat">Satellite</button></div>
+      </div>
+    </div>
+    <div id="map" aria-label="Map of Midtown with closures and your route"></div>
+    <div class="panel" style="padding:8px 10px">
+      <div class="tag" style="padding:2px 6px 6px">Near you · tap an item to see it on the map</div>
+      <div class="feed" id="feed"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OPERATOR ================= -->
+<section id="ops" hidden>
+  <div class="stats">
+    <div class="stat"><b>2,418</b><span>posts &amp; reports, last 10 min</span></div>
+    <div class="stat"><b>312</b><span>mention a place and a closure</span></div>
+    <div class="stat"><b id="nClusters">9</b><span>clusters on the map</span></div>
+    <div class="stat"><b id="awaiting">3</b><span>waiting for your review</span></div>
+  </div>
+  <div class="ops">
+    <div class="panel">
+      <div class="tag">Live intake</div>
+      <h3 style="font:700 18px var(--f-display);margin:4px 0 2px">Every incoming post is read by AI</h3>
+      <p class="small" style="margin:0">Try one, or paste any post and attach a photo. The result joins the queue and the map.</p>
+      <div class="presets" id="presets"></div>
+      <textarea id="post" aria-label="Post text"></textarea>
+      <div id="presetImg"></div>
+      <div class="reportrow" style="margin-top:8px"><label class="file">Photo <input type="file" id="opPhoto" accept="image/*"></label><button class="btn primary" id="analyze">Read &amp; verify</button></div>
+      <p class="small" id="aiNote" style="margin:8px 0 0">The AI also gets tonight's context: when the game ended, the area, and the official closures.</p>
+    </div>
+    <div>
+      <p class="small" style="margin:0 0 10px">Demo data. Signals are grouped by place and time. A cluster becomes <b>Official</b> only when an operator confirms it, or NYPD, DOT or MTA publishes it.</p>
+      <div class="queue" id="queue"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PLAN ================= -->
+<section id="plan" class="plan" hidden>
+  <div>
+    <h2>The problem on a crowd night</h2>
+    <div class="truths">
+      <div><b>Closures are improvised.</b>NYPD closes streets as crowds move and decides each closure on the spot. No complete list exists ahead of time, and DOT's advisories don't include emergency closures.</div>
+      <div><b>Information is scattered.</b>Notify NYC texts, MTA alerts, DOT advisories, 511NY, X, Instagram, TikTok, Reddit and Citizen each show one piece. None of them answers "how do I get home?"</div>
+      <div><b>People are on foot, with weak signal.</b>Cell networks jam and batteries run low. Driving apps miss barricades and closed subway entrances.</div>
+    </div>
+  </div>
+
+  <div>
+    <h2>How it works</h2>
+    <div class="flow">
+      <div><b>1 · Ingest</b>Official feeds, public posts tagged with event keywords or posted near the area, 311 calls, DOT camera snapshots, and reports sent through the page.</div>
+      <div><b>2 · Understand</b>An LLM turns each post or photo into a structured record: what happened, where (matched to a real block), who it affects, and when.</div>
+      <div><b>3 · Verify</b>Five checks: time, place, media, source and corroboration. A post that fails any of them never reaches the public map.</div>
+      <div><b>4 · Fuse</b>Records are grouped by block and 10-minute window. Each cluster gets a trust level and fades out over time unless new reports refresh it.</div>
+      <div><b>5 · Publish</b>Operators confirm a cluster with one click. The result goes to the map, the routes, Notify NYC and an open closure feed that Waze, Google and Apple can read.</div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Making sense of messy, multimodal posts</h2>
+    <ul class="tight">
+      <li><b>NYC street language.</b> "Outside the Garden", "34th &amp; 7th", "Herald", "by the PATH": the LLM extracts the place as written, and the city's geocoder (NYC Geoclient / LION street centerline) snaps it to a real block or intersection. The LLM never guesses coordinates.</li>
+      <li><b>Reading photos.</b> The model reads street signs, storefronts, subway signage, barricades, crowd density, day or night, and weather, then checks that against what the caption claims.</li>
+      <li><b>Two model tiers for cost and scale.</b> A fast, cheap model screens every post for relevance. Only the roughly 10% that mention a place and a closure go to a stronger model, along with every photo. Duplicate reposts are collapsed before any model sees them.</li>
+      <li><b>Structured output only.</b> Each post becomes one fixed JSON record: type, location, affects, time and checks. Software clusters and scores those records, so the model's prose never drives decisions.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Keeping fakes and stale posts out</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Check</th><th>What we test</th><th>Catches</th></tr></thead>
+      <tbody>
+        <tr><td><b>Time</b></td><td>Post time and photo metadata are after the event trigger (the final buzzer). Reports fade after 20 minutes without new confirmation.</td><td>Posts and photos from June's parade, or from last year</td></tr>
+        <tr><td><b>Place</b></td><td>The claimed spot, the geotag and what the photo shows (signs, landmarks) all agree.</td><td>"Broadway closed" posts that are really about downtown</td></tr>
+        <tr><td><b>Media</b></td><td>Perceptual hash against an archive of past events plus reverse image search. Visual cues: daylight at midnight, ticker tape, signs of AI generation.</td><td>Recycled and AI-generated images</td></tr>
+        <tr><td><b>Source</b></td><td>Account age and past accuracy. Bursts of near-identical posts from new accounts.</td><td>Bots, coordinated hoaxes</td></tr>
+        <tr><td><b>Corroboration</b></td><td>At least 3 independent sources within 150 m and 10 minutes, from at least 2 platforms, or a camera or officer on the ground.</td><td>Lone false reports</td></tr>
+      </tbody>
+    </table></div>
+    <p class="rule" style="margin-top:12px">Safety rule: crowd reports can only steer people <i>away</i> from a street, never <i>toward</i> one. A dangerous claim (a bomb threat, a stampede) is never published from social media. It goes straight to NYPD and NYC Emergency Management to check.</p>
+  </div>
+
+  <div>
+    <h2>Built for millions of phones at once</h2>
+    <ul class="tight">
+      <li><b>One small file.</b> Every 30 seconds the map state is published as one static snapshot of about 50 KB, served from a CDN. A million readers cost about the same as ten, and nothing breaks under load.</li>
+      <li><b>No app to install.</b> A Notify NYC message or Wireless Emergency Alert (WEA) carries the link. The page loads on a weak 3G connection and keeps working offline once loaded.</li>
+      <li><b>Text fallback.</b> Text <code>HOME QUEENS</code> to a city short code and get the route back as two lines of text, for people with no data connection.</li>
+      <li><b>Push to the apps people already use.</b> Publish closures as an open feed in Waze's closure format (CIFS) and as GeoJSON, so Google Maps, Apple Maps, Citymapper and Waze update too.</li>
+      <li><b>Access for everyone.</b> The 10 languages NYC Local Law 30 requires, step-free routes built from MTA elevator status, and large text and high contrast.</li>
+      <li><b>Works anywhere in the city.</b> Events are configs: an area, a start time and a keyword list. The same system covers the Marathon, the July 4th fireworks, New Year's Eve, parades and the US Open.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Run of show</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>When</th><th>Who</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>Clinching game, day before</td><td>NYC Emergency Management</td><td>Load the MSG / Times Square / Herald Square event config. Add NYPD's pre-planned frozen zones as Official items.</td></tr>
+        <tr><td>Final buzzer</td><td>System</td><td>Event clock starts; the Time check now rejects anything posted earlier. Notify NYC sends the link.</td></tr>
+        <tr><td>During</td><td>2 operators at the Emergency Management watch desk</td><td>Review clusters, confirm or dismiss with one click, ask nearby units or cameras to check.</td></tr>
+        <tr><td>All clear</td><td>System + NYPD</td><td>Clusters with no new reports fade out. NYPD's reopenings publish as all-clear updates.</td></tr>
+        <tr><td>Parade day</td><td>Same system</td><td>Load the published route, security screening entrances and MTA station plan the night before. Live reports fill in the rest.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div>
+    <h2>Privacy</h2>
+    <p>We read only public posts and reports people send us on purpose. We keep only the structured record (type, block, time), never names or handles. Raw posts are deleted after 24 hours.</p>
+  </div>
+
+  <p class="small">Real data sources: NYC DOT Special / Weekday / Weekend Traffic Updates on NYC Open Data (<code>t4s6-khpm</code>, <code>vihk-m25f</code>, <code>qhen-5rve</code>), MTA GTFS-realtime service alerts and elevator status, 511NY, Notify NYC, 311, NYC DOT traffic cameras, NYC Geoclient / LION. Background: 2026 Knicks win-night crowds around MSG and 6th Ave; the parade closed every street south of Canal, with 10,000 officers deployed.</p>
+  <p class="small">Photos are real and freely licensed, from Wikimedia Commons: Demetri Andriani and Tzim78 (CC BY-SA 4.0), Marc A. Hermann / MTA (CC BY 4.0), City Hall ceremony (CC BY 4.0). They show the June 2026 Finals crowds at the same corners and are used here as demo inputs. Map data © OpenStreetMap contributors (ODbL). Satellite imagery © Esri, Maxar, Earthstar Geographics.</p>
+</section>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const GRID={"11|22":[40.748204,-74.007415],"11|23":[40.748891,-74.007003],"11|24":[40.749535,-74.0065],"11|25":[40.750178,-74.006071],"11|26":[40.750808,-74.005622],"11|27":[40.751404,-74.005177],"11|28":[40.752031,-74.004722],"11|29":[40.752665,-74.004269],"11|30":[40.753276,-74.00382],"11|33":[40.755125,-74.00248],"11|34":[40.755782,-74.001976],"11|35":[40.756464,-74.001466],"11|36":[40.757055,-74.001033],"11|37":[40.757674,-74.000585],"11|38":[40.758296,-74.000129],"11|39":[40.758914,-73.999684],"11|40":[40.759504,-73.999225],"11|41":[40.760151,-73.998781],"11|42":[40.760832,-73.998295],"11|43":[40.7615,-73.997803],"11|44":[40.762115,-73.997344],"11|45":[40.76274,-73.99689],"11|46":[40.763367,-73.996437],"11|47":[40.763992,-73.995981],"11|48":[40.764618,-73.995522],"11|49":[40.76525,-73.995066],"11|50":[40.765878,-73.994606],"10|22":[40.747023,-74.004653],"10|23":[40.747703,-74.004164],"10|24":[40.748355,-74.003684],"10|25":[40.748974,-74.003236],"10|26":[40.749611,-74.002775],"10|27":[40.750229,-74.002314],"10|28":[40.750828,-74.001882],"10|29":[40.751458,-74.001418],"10|30":[40.75216,-74.000919],"10|31":[40.75269,-74.00053],"10|33":[40.753919,-73.999634],"10|34":[40.754591,-73.999149],"10|35":[40.755257,-73.998659],"10|36":[40.755874,-73.998209],"10|37":[40.75648,-73.997767],"10|38":[40.757094,-73.997322],"10|39":[40.757743,-73.996846],"10|40":[40.758346,-73.996405],"10|41":[40.758984,-73.995941],"10|42":[40.759626,-73.995473],"10|43":[40.760312,-73.994972],"10|44":[40.760925,-73.994526],"10|45":[40.761552,-73.994069],"10|46":[40.762185,-73.993607],"10|47":[40.762803,-73.993156],"10|48":[40.763428,-73.992701],"10|49":[40.764057,-73.992242],"10|50":[40.764686,-73.991785],"9|22":[40.745855,-74.001859],"9|23":[40.746521,-74.00135],"9|24":[40.747171,-74.000868],"9|25":[40.747791,-74.000422],"9|26":[40.74843,-73.999957],"9|28":[40.749659,-73.999065],"9|29":[40.750275,-73.998612],"9|30":[40.750988,-73.998099],"9|31":[40.751507,-73.997725],"9|33":[40.752742,-73.996817],"9|34":[40.753408,-73.996318],"9|35":[40.754071,-73.995843],"9|36":[40.754686,-73.995383],"9|37":[40.755297,-73.99493],"9|38":[40.755904,-73.994475],"9|39":[40.756532,-73.994018],"9|40":[40.757154,-73.993578],"9|41":[40.75784,-73.993073],"9|42":[40.758433,-73.992646],"9|43":[40.759104,-73.992138],"9|44":[40.759728,-73.991684],"9|45":[40.760355,-73.991227],"9|46":[40.760987,-73.990767],"9|47":[40.761605,-73.990316],"9|48":[40.762233,-73.989859],"9|49":[40.762862,-73.989402],"9|50":[40.76349,-73.988943],"8|22":[40.74463,-73.998969],"8|23":[40.745305,-73.998472],"8|24":[40.745965,-73.99799],"8|25":[40.74658,-73.99755],"8|26":[40.747217,-73.997085],"8|27":[40.747836,-73.996634],"8|28":[40.748435,-73.996192],"8|29":[40.749056,-73.995729],"8|30":[40.749674,-73.995296],"8|31":[40.750294,-73.994845],"8|33":[40.751532,-73.993943],"8|34":[40.752199,-73.993458],"8|35":[40.752858,-73.992976],"8|36":[40.753478,-73.992525],"8|37":[40.754091,-73.992079],"8|38":[40.754707,-73.991633],"8|39":[40.75533,-73.991177],"8|40":[40.755949,-73.990728],"8|41":[40.756567,-73.990276],"8|42":[40.757233,-73.989791],"8|43":[40.757912,-73.989296],"8|44":[40.758532,-73.988843],"8|45":[40.75916,-73.988386],"8|46":[40.759787,-73.987928],"8|47":[40.760409,-73.987475],"8|48":[40.761037,-73.987018],"8|49":[40.761668,-73.986566],"8|50":[40.762294,-73.986101],"7|22":[40.743431,-73.99613],"7|23":[40.744107,-73.995638],"7|24":[40.744765,-73.995159],"7|25":[40.745383,-73.994709],"7|26":[40.746018,-73.994253],"7|27":[40.746618,-73.993813],"7|28":[40.747236,-73.993362],"7|29":[40.747863,-73.992905],"7|30":[40.748469,-73.992463],"7|31":[40.749101,-73.992006],"7|32":[40.749706,-73.991563],"7|33":[40.750342,-73.991099],"7|34":[40.751009,-73.990612],"7|35":[40.751659,-73.990134],"7|36":[40.752289,-73.989688],"7|37":[40.752895,-73.989243],"7|38":[40.753503,-73.988798],"7|39":[40.754147,-73.988323],"7|40":[40.754755,-73.987888],"7|41":[40.755373,-73.987447],"7|42":[40.756036,-73.986949],"7|43":[40.75671,-73.986458],"7|44":[40.757342,-73.986012],"7|45":[40.757963,-73.985534],"7|46":[40.758597,-73.985079],"7|47":[40.759223,-73.984619],"7|48":[40.759841,-73.984174],"7|49":[40.760463,-73.983706],"7|50":[40.761095,-73.98325],"6|22":[40.742233,-73.993292],"6|23":[40.74291,-73.992798],"6|24":[40.743568,-73.992318],"6|25":[40.744186,-73.991871],"6|26":[40.744819,-73.991409],"6|27":[40.745421,-73.990968],"6|28":[40.746038,-73.990518],"6|29":[40.746666,-73.990068],"6|30":[40.747277,-73.989617],"6|31":[40.747896,-73.989157],"6|32":[40.748508,-73.988695],"6|33":[40.749122,-73.988235],"6|34":[40.749801,-73.987746],"6|35":[40.750457,-73.987287],"6|36":[40.751082,-73.986828],"6|37":[40.7517,-73.986399],"6|38":[40.752317,-73.985947],"6|39":[40.752944,-73.985484],"6|40":[40.753558,-73.98504],"6|41":[40.754177,-73.984596],"6|42":[40.754842,-73.984118],"6|43":[40.755516,-73.983624],"6|44":[40.756142,-73.983166],"6|45":[40.756771,-73.982712],"6|46":[40.75739,-73.982254],"6|47":[40.758016,-73.981797],"6|48":[40.758645,-73.981341],"6|49":[40.759274,-73.980883],"6|50":[40.759911,-73.980418],"5|22":[40.740886,-73.990083],"5|23":[40.741551,-73.989597],"5|24":[40.742219,-73.989107],"5|25":[40.742832,-73.988662],"5|26":[40.743457,-73.988191],"5|27":[40.744067,-73.987745],"5|28":[40.744678,-73.987301],"5|29":[40.745301,-73.986846],"5|30":[40.745922,-73.986391],"5|31":[40.746531,-73.985943],"5|32":[40.747152,-73.98549],"5|33":[40.747774,-73.985038],"5|34":[40.748454,-73.984545],"5|35":[40.749105,-73.984071],"5|36":[40.749728,-73.983617],"5|37":[40.750341,-73.983175],"5|38":[40.75096,-73.982726],"5|39":[40.751581,-73.982276],"5|40":[40.752205,-73.981824],"5|41":[40.752816,-73.98138],"5|42":[40.753481,-73.980879],"5|43":[40.754165,-73.980392],"5|44":[40.754783,-73.979943],"5|45":[40.755413,-73.979489],"5|46":[40.756037,-73.979023],"5|47":[40.756659,-73.978557],"5|48":[40.757283,-73.978111],"5|49":[40.75791,-73.977662],"5|50":[40.758544,-73.977206],"Mad|23":[40.740881,-73.987985],"Mad|24":[40.741545,-73.987506],"Mad|25":[40.742157,-73.987045],"Mad|26":[40.742771,-73.986598],"Mad|27":[40.743395,-73.986143],"Mad|28":[40.744008,-73.985696],"Mad|29":[40.744631,-73.985243],"Mad|30":[40.74525,-73.984794],"Mad|31":[40.745859,-73.984346],"Mad|32":[40.746482,-73.983891],"Mad|33":[40.747101,-73.983443],"Mad|34":[40.747771,-73.982961],"Mad|35":[40.74843,-73.982478],"Mad|36":[40.749055,-73.982022],"Mad|37":[40.749665,-73.98157],"Mad|38":[40.750283,-73.981123],"Mad|39":[40.750907,-73.980677],"Mad|40":[40.751535,-73.980222],"Mad|41":[40.75214,-73.979779],"Mad|42":[40.752812,-73.979287],"Mad|43":[40.753486,-73.978776],"Mad|44":[40.754099,-73.97833],"Mad|45":[40.754735,-73.977867],"Mad|46":[40.755362,-73.977408],"Mad|47":[40.755987,-73.976964],"Mad|48":[40.756604,-73.976512],"Mad|49":[40.757236,-73.976048],"Mad|50":[40.757858,-73.975593],"Park|22":[40.739526,-73.986856],"Park|23":[40.740192,-73.986357],"Park|24":[40.74085,-73.985883],"Park|25":[40.741479,-73.985434],"Park|26":[40.742098,-73.984982],"Park|27":[40.742716,-73.984532],"Park|28":[40.743336,-73.98408],"Park|29":[40.743957,-73.98363],"Park|30":[40.744572,-73.983182],"Park|31":[40.745183,-73.982736],"Park|32":[40.745805,-73.982277],"Park|33":[40.746427,-73.981837],"Park|34":[40.747085,-73.98136],"Park|35":[40.747758,-73.980861],"Park|36":[40.748375,-73.980411],"Park|37":[40.748994,-73.97996],"Park|38":[40.749603,-73.979514],"Park|39":[40.750232,-73.979056],"Park|40":[40.75086,-73.978607],"Park|41":[40.751466,-73.978156],"Park|46":[40.754684,-73.975812],"Park|47":[40.755311,-73.975355],"Park|48":[40.755941,-73.974896],"Park|49":[40.756563,-73.974442],"Park|50":[40.757182,-73.97399],"Lex|22":[40.738848,-73.985245],"Lex|23":[40.739514,-73.984752],"Lex|24":[40.740177,-73.984267],"Lex|25":[40.740801,-73.983816],"Lex|26":[40.741416,-73.983367],"Lex|27":[40.742036,-73.982913],"Lex|28":[40.742653,-73.982465],"Lex|29":[40.743275,-73.982013],"Lex|30":[40.743889,-73.981565],"Lex|31":[40.744504,-73.98112],"Lex|32":[40.745128,-73.98067],"Lex|33":[40.745746,-73.980223],"Lex|34":[40.746406,-73.979744],"Lex|35":[40.74708,-73.979255],"Lex|36":[40.747697,-73.978804],"Lex|37":[40.748312,-73.978342],"Lex|38":[40.748919,-73.977901],"Lex|39":[40.749554,-73.977439],"Lex|40":[40.75017,-73.976991],"Lex|41":[40.750785,-73.97654],"Lex|42":[40.751439,-73.976055],"Lex|44":[40.752741,-73.975102],"Lex|45":[40.753367,-73.974648],"Lex|46":[40.753994,-73.97419],"Lex|47":[40.754613,-73.973734],"Lex|48":[40.755251,-73.973267],"Lex|49":[40.75587,-73.97282],"Lex|50":[40.756498,-73.972362],"11|31":[40.753892,-74.003373],"11|32":[40.754509,-74.002927],"10|32":[40.753304,-74.000082],"9|27":[40.749044,-73.999511],"9|32":[40.752124,-73.997271],"8|32":[40.750913,-73.994394],"Park|42":[40.75211,-73.977687],"Park|43":[40.752753,-73.977218],"Park|44":[40.753397,-73.976749],"Park|45":[40.754041,-73.976281],"Lex|43":[40.75209,-73.975579]};
+const BOUNDS={"osm15": [[40.7306085, -74.0148926], [40.7722219, -73.9599609]], "osm16": [[40.734771, -74.0148926], [40.7680617, -73.9709473]], "osm17": [[40.7389332, -74.0066528], [40.7639013, -73.9764404]], "sat15": [[40.7306085, -74.0148926], [40.7722219, -73.9599609]], "sat16": [[40.734771, -74.0148926], [40.7680617, -73.9709473]], "sat17": [[40.7389332, -74.0066528], [40.7639013, -73.9764404]]};
+const G=k=>GRID[k];
+const lerp=(a,b,f)=>[a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f];
+const mid=(a,b)=>lerp(a,b,.5);
+const PL={
+  YOU:G("7|31"),
+  HY:lerp(G("10|34"),G("11|34"),.55),
+  MOY:lerp(mid(G("8|31"),G("8|33")),mid(G("9|31"),G("9|33")),.1),
+  ACE:G("8|34"), C23:G("8|23"), P123:mid(G("7|33"),G("7|34")), PATH:G("6|33"),
+  TSQ:[40.7563,-73.9864], PICK:G("10|30")
+};
+const pt=k=>Array.isArray(k)?k:(PL[k]||G(k));
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const PHOTOS={
+  c7av:{src:"photos/crowd-7av-31st.jpg",cap:"7th Ave & W 31st St outside MSG, 11:34 PM, June 3, 2026 (Finals watch-party crowd)",by:"Demetri Andriani",lic:"CC BY-SA 4.0"},
+  c7avb:{src:"photos/crowd-7av-31st-b.jpg",cap:"7th Ave near W 31st St, 11:34 PM, June 3, 2026",by:"Tzim78",lic:"CC BY-SA 4.0"},
+  c6av:{src:"photos/crowd-6av-32nd.jpg",cap:"6th Ave & W 32nd St facing MSG, 11:43 PM, June 3, 2026",by:"Tzim78",lic:"CC BY-SA 4.0"},
+  ace:{src:"photos/ace-8av-34th.jpg",cap:"34 St–Penn A/C/E entrance, 8th Ave & W 34th St, June 2026",by:"Marc A. Hermann, MTA",lic:"CC BY 4.0"},
+  cityhall:{src:"photos/cityhall-ceremony.jpg",cap:"Knicks City Hall ceremony, daytime, June 18, 2026",by:"Wikimedia Commons",lic:"CC BY 4.0"}
+};
+const credit=p=>p?`<div class="credit">Real photo: ${esc(p.cap)}. ${esc(p.by)}, ${esc(p.lic)}</div>`:"";
+
+/* ---------- state ---------- */
+const S={tab:"pitch",dest:"brooklyn",base:"osm",updated:"11:49 PM"};
+const EV=[
+  {id:"c1",kind:"line",pts:["7|30","7|35"],trust:"official",title:"7th Ave closed to cars, W 30th–35th St",detail:"Crowd zone outside the Garden. Walk west to get out of it.",src:"NYPD",time:"11:31 PM",photo:"c7av"},
+  {id:"c2",kind:"line",pts:["8|33","6|33"],trust:"official",title:"W 33rd St closed, 8th–6th Ave",detail:"Barricades at both ends of the block.",src:"NYPD",time:"11:34 PM",photo:"c7avb"},
+  {id:"c3",kind:"point",at:"P123",trust:"official",title:"34 St–Penn (1/2/3) entrances closed",detail:"1/2/3 trains are skipping this stop. Use the A/C/E on 8th Ave.",src:"MTA",time:"11:38 PM"},
+  {id:"c4",kind:"line",pts:["6|32","6|35"],trust:"confirmed",title:"6th Ave packed at Herald Sq, W 32nd–35th St",detail:"The PATH 33 St entrance is blocked by the crowd. Police are moving people north.",src:"41 reports · 3 platforms · 9 photos",time:"11:45 PM",photo:"c6av"},
+  {id:"c5",kind:"area",at:"TSQ",r:150,trust:"official",title:"Times Sq: police activity, W 42nd St & Broadway",detail:"Avoid the area. Emergency vehicles on scene.",src:"NYPD",time:"11:40 PM"},
+  {id:"c7",kind:"line",pts:["10|44","10|50"],trust:"confirmed",title:"10th Ave blocked by street party, W 44th–50th St",detail:"Hell's Kitchen crowds have stopped cars.",src:"27 reports · 2 platforms",time:"11:41 PM"},
+  {id:"c6",kind:"line",pts:["8|28","8|25"],trust:"unverified",title:"8th Ave blocked by police, W 25th–28th St",detail:"Reported by 2 people. Not confirmed yet.",src:"2 reports",time:"11:47 PM"}
+];
+const ev=id=>EV.find(e=>e.id===id);
+const TRUST_LBL={official:"Official",confirmed:"Confirmed",unverified:"Unverified",dismissed:"Dismissed"};
+
+const ROUTES={
+  queens:{title:"Take the 7 from 34 St–Hudson Yards",eta:"12 min walk · then 7 train",to:"HY",
+    path:["YOU","8|31","9|31","10|31","10|34","HY"],
+    steps:["Walk west on W 31st St, away from the Garden (3 blocks).","Turn right on 10th Ave and walk to W 34th St.","Enter 34 St–Hudson Yards. Take the 7 to Queens."],avoids:["c1","c4"]},
+  brooklyn:{title:"Take the C from 23 St",eta:"14 min walk · then C train",to:"C23",
+    path:["YOU","8|31","8|23"],
+    steps:["Walk west on W 31st St to 8th Ave (1 block).","Turn left and walk south on 8th Ave to W 23rd St.","Enter 23 St station. Take the C downtown to Brooklyn."],avoids:["c1","c4"]},
+  brooklyn_alt:{title:"Take the C from 23 St, via 9th Ave",eta:"17 min walk · then C train",to:"C23",
+    path:["YOU","8|31","9|31","9|23","8|23"],
+    steps:["Walk west on W 31st St to 9th Ave (2 blocks).","Turn left and walk south on 9th Ave to W 23rd St.","Turn left, walk 1 block to 8th Ave and enter 23 St station. Take the C to Brooklyn."],avoids:["c1","c4","c6"]},
+  nj:{title:"NJ Transit from Moynihan Train Hall",eta:"4 min walk · then NJ Transit",to:"MOY",
+    path:["YOU","8|31","MOY"],
+    steps:["Walk west on W 31st St to 8th Ave.","Cross 8th Ave and enter Moynihan Train Hall.","Take NJ Transit. Skip PATH 33 St tonight because its entrance is blocked by the crowd."],avoids:["c4","c3"]},
+  li:{title:"LIRR from Moynihan Train Hall",eta:"4 min walk · then LIRR",to:"MOY",
+    path:["YOU","8|31","MOY"],
+    steps:["Walk west on W 31st St to 8th Ave.","Cross 8th Ave and enter Moynihan Train Hall.","LIRR boards from the Moynihan concourse. Avoid the 7th Ave entrances, which are closed."],avoids:["c1","c3"]},
+  uptown:{title:"A/C/E uptown from 8th Ave & W 34th St",eta:"6 min walk · then A or C",to:"ACE",
+    path:["YOU","8|31","ACE"],
+    steps:["Walk west on W 31st St to 8th Ave.","Turn right and walk north on 8th Ave to W 34th St.","Enter at the southeast corner (this entrance is open). Take the A or C uptown."],stepPhoto:{2:"ace"},avoids:["c1","c3"]},
+  car:{title:"Rideshare pickup at 10th Ave & W 30th St",eta:"9 min walk · then car",to:"PICK",
+    path:["YOU","8|31","9|31","10|31","PICK"],
+    steps:["Walk west on W 31st St to 10th Ave.","Turn left to the pickup zone at W 30th St.","Request your ride for 10th Ave & W 30th St. Streets east of 8th Ave are gridlocked."],avoids:["c1","c2"]}
+};
+const DESTS=[["brooklyn","Brooklyn"],["queens","Queens"],["uptown","Uptown / Bronx"],["nj","New Jersey"],["li","Long Island"],["car","Rideshare"]];
+const STATIONS=[
+  {at:"HY",html:"7 · Hudson Yards",cls:"open",key:"HY"},
+  {at:"C23",html:"C E · 23 St",cls:"open",key:"C23"},
+  {at:"ACE",html:"A C E · 34 St",cls:"open",key:"ACE",photo:"ace"},
+  {at:"MOY",html:"Moynihan · NJT · LIRR",cls:"open",key:"MOY"},
+  {at:"PATH",html:"PATH 33 St",cls:"off",key:"PATH"},
+  {at:"P123",html:"1 2 3 · 34 St",cls:"off",key:"P123"},
+  {at:"PICK",html:"Pickup",cls:"open",key:"PICK"}
+];
+function routeFor(d){
+  const t=ev("c6").trust;
+  if(d==="brooklyn"&&(t==="confirmed"||t==="official"))return ROUTES.brooklyn_alt;
+  return ROUTES[d];
+}
+
+/* ---------- map ---------- */
+const map=L.map("map",{zoomSnap:.25,zoomDelta:.5,minZoom:14.5,maxZoom:18,maxBounds:BOUNDS.osm15,maxBoundsViscosity:.8,preferCanvas:false});
+map.createPane("base");map.getPane("base").style.zIndex=200;
+map.attributionControl.setPrefix(false);
+const baseLayers={};
+for(const k of ["osm","sat"])baseLayers[k]=[15,16,17].map(z=>({z,ov:L.imageOverlay(`map/${k}${z}.jpg`,BOUNDS[k+z],{pane:"base",className:"base "+k,interactive:false,
+  attribution:k==="osm"?"© OpenStreetMap contributors":"Imagery © Esri, Maxar, Earthstar Geographics"})}));
+function syncBase(){
+  const z=map.getZoom();
+  for(const k of ["osm","sat"])for(const l of baseLayers[k]){
+    const on=k===S.base&&(l.z===15||(l.z===16&&z>=15.25)||(l.z===17&&z>=16.25));
+    if(on&&!map.hasLayer(l.ov))l.ov.addTo(map); if(!on&&map.hasLayer(l.ov))map.removeLayer(l.ov);
+  }
+  for(const l of baseLayers[S.base])if(map.hasLayer(l.ov))l.ov.bringToFront();
+}
+map.on("zoomend",syncBase);
+const evLayer=L.layerGroup().addTo(map), rtLayer=L.layerGroup().addTo(map), stLayer=L.layerGroup().addTo(map);
+const markers={};
+
+function popupHTML(e){
+  const p=PHOTOS[e.photo]||e.userPhoto;
+  return `<div class="pop">${p?`<img src="${esc(p.src)}" alt="">`:""}<div class="pb"><div><span class="chip ${e.trust}">${TRUST_LBL[e.trust]}</span></div><b>${esc(e.title)}</b><p>${esc(e.detail)}</p><div class="small">${esc(e.src)} · ${esc(e.time)}</div>${p&&!e.userPhoto?credit(p):p?`<div class="credit">Photo sent with the report</div>`:""}</div></div>`;
+}
+function centerOf(e){
+  if(e.kind==="line"){const a=pt(e.pts[0]),b=pt(e.pts[e.pts.length-1]);return mid(a,b)}
+  return pt(e.at);
+}
+function drawEvents(){
+  evLayer.clearLayers();
+  for(const e of EV){
+    if(e.trust==="dismissed")continue;
+    const w=e.trust==="unverified"?6:8;
+    if(e.kind==="line"){
+      const ll=e.pts.map(pt);
+      L.polyline(ll,{className:"clhalo",weight:w+5,interactive:false}).addTo(evLayer);
+      L.polyline(ll,{className:"cl "+e.trust,weight:w}).on("click",()=>openEvent(e.id)).addTo(evLayer);
+    }else if(e.kind==="area"){
+      L.circle(pt(e.at),{radius:e.r,className:"area "+e.trust,weight:2}).on("click",()=>openEvent(e.id)).addTo(evLayer);
+    }
+    const p=PHOTOS[e.photo]||e.userPhoto;
+    const icon=L.divIcon({className:"",iconSize:[40,40],iconAnchor:[20,20],
+      html:`<div class="pin ${e.trust}" style="${p?`background-image:url('${p.src}')`:""}" title="${esc(e.title)}">${p?"":"!"}</div>`});
+    markers[e.id]=L.marker(centerOf(e),{icon,keyboard:true,title:e.title}).bindPopup(()=>popupHTML(e),{maxWidth:280,minWidth:280}).addTo(evLayer);
+  }
+}
+function openEvent(id){const m=markers[id];if(!m)return;map.flyTo(m.getLatLng(),Math.max(map.getZoom(),16.25),{duration:.6});setTimeout(()=>m.openPopup(),650)}
+function drawRoute(fit){
+  rtLayer.clearLayers();stLayer.clearLayers();
+  const r=routeFor(S.dest),ll=r.path.map(pt);
+  L.polyline(ll,{className:"routehalo",weight:11,interactive:false}).addTo(rtLayer);
+  L.polyline(ll,{className:"route",weight:6,interactive:false}).addTo(rtLayer);
+  for(const s of STATIONS){
+    const isDest=s.key===r.to;
+    if(s.key==="PICK"&&!isDest)continue;
+    const icon=L.divIcon({className:"",iconSize:[0,0],html:`<div class="stn ${isDest?"dest":s.cls}">${s.html}</div>`});
+    const m=L.marker(pt(s.at),{icon,zIndexOffset:isDest?1000:0}).addTo(stLayer);
+    if(s.photo)m.bindPopup(`<div class="pop"><img src="${PHOTOS[s.photo].src}" alt=""><div class="pb"><span class="chip official">Open</span><b>34 St–Penn A/C/E, 8th Ave entrance</b>${credit(PHOTOS[s.photo])}</div></div>`,{maxWidth:280,minWidth:280});
+  }
+  L.marker(PL.YOU,{icon:L.divIcon({className:"",iconSize:[18,18],iconAnchor:[9,9],html:'<div class="you" title="You"></div>'}),zIndexOffset:2000}).addTo(stLayer);
+  if(fit)map.flyToBounds(L.latLngBounds(ll).pad(.25),{maxZoom:16.5,duration:.6});
+}
+
+/* ---------- public panel ---------- */
+function renderAnswer(){
+  document.getElementById("dests").innerHTML=DESTS.map(([k,l])=>`<button aria-pressed="${S.dest===k}" data-d="${k}">${l}</button>`).join("");
+  const r=routeFor(S.dest),c6=ev("c6");
+  let extra="";
+  if(S.dest==="brooklyn"&&r===ROUTES.brooklyn&&c6.trust==="unverified")
+    extra=`<div class="banner warn"><b>Unverified report on your route:</b> police blocking 8th Ave at W 25th–28th St. It isn't confirmed, so your route is unchanged. If it's confirmed, we'll reroute you automatically.</div>`;
+  if(S.dest==="brooklyn"&&r===ROUTES.brooklyn_alt)
+    extra=c6.trust==="official"
+      ?`<div class="banner upd"><b>Route updated ${S.updated}.</b> NYPD confirmed 8th Ave is closed at W 25th–28th St. You're now going via 9th Ave (+3 min).</div>`
+      :`<div class="banner upd"><b>Route updated ${S.updated} from live reports.</b> 7 independent reports in 5 minutes, across 3 platforms plus a photo, agree that police are blocking 8th Ave at W 25th–28th St. You're now going via 9th Ave (+3 min).</div>`;
+  const av=r.avoids.map(id=>{const e=ev(id);return `${esc(e.title.split(",")[0])} <span class="chip ${e.trust}">${TRUST_LBL[e.trust]}</span>`}).join("<br>");
+  document.getElementById("answer").innerHTML=`<h3>${esc(r.title)}</h3><div class="eta">${r.eta}</div>${extra}
+    <ol class="steps">${r.steps.map((s,i)=>{const ph=r.stepPhoto&&PHOTOS[r.stepPhoto[i]];return `<li><span>${esc(s)}${ph?`<div class="stepimg"><img src="${ph.src}" alt="The open subway entrance"><div>${esc(ph.by)}, ${esc(ph.lic)}</div></div>`:""}</span></li>`}).join("")}</ol>
+    <div class="avoid"><b>Avoids:</b><br>${av}</div>`;
+}
+function renderFeed(){
+  const order={official:0,confirmed:1,unverified:2};
+  const list=EV.filter(e=>e.trust!=="dismissed").sort((a,b)=>order[a.trust]-order[b.trust]);
+  document.getElementById("feed").innerHTML=list.map(e=>`<button class="item" data-ev="${e.id}"><span class="chip ${e.trust}">${TRUST_LBL[e.trust]}</span><span>${esc(e.title)}<br><span class="small">${esc(e.src)}${(e.photo||e.userPhoto)?" · 📷 photo":""}</span></span><time>${esc(e.time)}</time></button>`).join("");
+}
+
+/* ---------- operator queue ---------- */
+const QUEUE=[
+  {ev:"c6",title:"8th Ave, W 25th–28th St: police blocking the avenue",srcs:"2 posts (X, Citizen) · first seen 11:42 PM",conf:.41,
+   read:"“cops just shut 8th ave around 26th” → closure · 8th Ave between W 25th & W 28th St · pedestrians and cars",
+   checks:[["pass","Time","Both posts are after the 11:21 PM buzzer"],["pass","Place","Same block in both posts"],["warn","Media","No photo yet"],["pass","Source","2 independent accounts"],["warn","Corroboration","Needs 3+ sources from 2+ platforms. DOT camera 8 Av @ 26 St is available"]],
+   effect:"Confirming reroutes about 2,100 people heading to the 23 St C/E."},
+  {ev:"c4",title:"Herald Sq: 6th Ave packed, PATH 33 St entrance blocked",srcs:"38 posts · 9 photos · 2 videos · first seen 11:36 PM",conf:.93,photo:"c6av",
+   read:"Photo: a dense night crowd on 6th Ave, MSG signage ahead, police in the distance. Caption: “can't get near the PATH”",
+   checks:[["pass","Time","Photos are at night; timestamps 11:39–11:45 PM"],["pass","Place","Bank storefront and MSG signage match 6th Ave & W 32nd St"],["pass","Media","New images, no match in the archive"],["pass","Source","38 accounts across 3 platforms"],["pass","Corroboration","Matches DOT camera 6 Av @ 34 St"]],
+   effect:"Confirming adds a PATH warning to the New Jersey route and drafts a Notify NYC alert."},
+  {ev:"c7",title:"Hell's Kitchen: 10th Ave blocked by street party, W 44th–50th St",srcs:"27 posts · 6 videos · 3 calls to 311 · first seen 11:30 PM",conf:.88,
+   read:"Videos: people dancing in the roadway, cars stopped, 10th Ave street signs visible",
+   checks:[["pass","Time","After the buzzer"],["pass","Place","Street signs read 10 Av and W 46 St"],["pass","Media","New videos"],["pass","Source","27 accounts across 2 platforms"],["warn","Corroboration","No official source yet"]],
+   effect:"Confirming tells rideshare users to avoid 10th Ave north of 42nd."},
+  {rejected:true,title:"“BROADWAY IS CLOSED from Battery to City Hall”",srcs:"Instagram · 1 photo · reposted 212 times · 11:40 PM",conf:.04,photo:"cityhall",
+   read:"Photo: daytime ceremony, a trophy, confetti. Not a street scene in Midtown tonight.",
+   checks:[["fail","Media","Matches a photo from the June 18, 2026 City Hall ceremony"],["fail","Time","Photo is in daylight but posted at 11:40 PM"],["fail","Place","Downtown parade route; no parade is happening tonight"]],
+   effect:"Filtered automatically. Not shown to the public."},
+  {rejected:true,title:"“MSG being evacuated, bomb threat”",srcs:"X · 44 near-identical posts in 2 min · accounts 1–3 days old",conf:.07,
+   read:"Text only. Identical wording across accounts. No photo or video.",
+   checks:[["fail","Source","Coordinated burst from new accounts"],["fail","Corroboration","No matching 911 calls, no NYPD radio activity, and the crowd on camera is calm"],["warn","Safety","Dangerous claims are never published from social media"]],
+   effect:"Sent to the NYPD and Emergency Management watch desk to check. Not published."}
+];
+function qStatus(q){if(q.rejected)return "rejected";const e=ev(q.ev);return e?e.trust:"unverified"}
+function renderQueue(){
+  let waiting=0;
+  document.getElementById("queue").innerHTML=QUEUE.map((q,i)=>{
+    const st=qStatus(q);if(!q.rejected&&st!=="official"&&st!=="dismissed")waiting++;
+    const ph=q.photo?PHOTOS[q.photo]:q.userPhoto;
+    const chip=q.rejected?`<span class="chip rejected">Held back</span>`:`<span class="chip ${st==="dismissed"?"unverified":st}">${TRUST_LBL[st]}</span>`;
+    const actions=q.rejected?`<span class="small">${esc(q.effect)}</span>`:
+      st==="official"?`<span class="pub">✓ Published ${S.updated}: map and routes · Notify NYC draft · open closure feed (Waze / Google / Apple)</span>`:
+      st==="dismissed"?`<span class="small">Dismissed. Kept for the after-action review.</span>`:
+      `<button class="btn good" data-ok="${i}">Confirm as Official</button><button class="btn" data-no="${i}">Dismiss</button><span class="small">${esc(q.effect||"")}</span>`;
+    const cls=q.rejected?"rejected":st==="official"?"official":q.isNew?"new":"";
+    return `<div class="q ${cls} ${ph?"":"noimg"}"><div class="qmain">
+      <div class="qh"><h3>${esc(q.title)}</h3>${chip}</div>
+      <div class="srcs">${esc(q.srcs)}</div>
+      <div class="read"><b>AI read:</b> ${esc(q.read)}</div>
+      <div class="checks">${q.checks.map(([r,n,t])=>`<div class="ck ${esc(r)}"><i>${r==="pass"?"✓":r==="warn"?"!":"✕"}</i><span><b>${esc(n)}.</b> ${esc(t)}</span></div>`).join("")}</div>
+      <div class="conf">Confidence <span class="bar"><i style="width:${Math.round(q.conf*100)}%"></i></span> ${Math.round(q.conf*100)}%</div>
+      <div class="qa">${actions}</div></div>
+      ${ph?`<div class="qimg"><img src="${esc(ph.src)}" alt="">${q.userPhoto?`<div class="credit">Attached to the post</div>`:credit(ph)}</div>`:""}</div>`;
+  }).join("");
+  document.getElementById("awaiting").textContent=waiting;
+  document.getElementById("nClusters").textContent=EV.filter(e=>e.trust!=="dismissed").length+2;
+}
+
+/* ---------- AI intake (shared by operator + public reports) ---------- */
+const PRESETS=[
+  {name:"Tweet · 8th Ave",text:"X · @chelsea_hoops · 11:44 PM · no geotag\n\"cops just shut 8th ave around 26th, cant get thru to the C at 23rd 😩 KNICKS IN 5 🧡💙\"",
+   saved:{relevant:true,type:"closure",title:"8th Ave blocked by police near W 26th St",location:{as_written:"8th ave around 26th",normalized:"8th Ave between W 25th St and W 28th St, Manhattan",avenue:"8",street:26},affects:["pedestrians","vehicles"],photo_reading:"",
+     checks:[{name:"Time",result:"pass",note:"Posted 11:44 PM, after the 11:21 PM buzzer"},{name:"Place",result:"pass",note:"Clear cross street inside tonight's area"},{name:"Media",result:"warn",note:"No photo attached"},{name:"Source",result:"warn",note:"One account; check its history"},{name:"Consistency",result:"pass",note:"Matches 2 other reports on the same block"}],
+     verdict:"corroborate",confidence:.62,public_summary:"Reported: police blocking 8th Ave near W 26th St. Not yet confirmed."}},
+  {name:"Instagram · Broadway + photo",photo:"cityhall",text:"Instagram · @nycfanatic · 11:40 PM\nCaption: \"BROADWAY IS CLOSED from Battery to City Hall!! 🎉🎉 get down here\"",
+   saved:{relevant:true,type:"closure",title:"Claimed Broadway closure downtown",location:{as_written:"Broadway, Battery to City Hall",normalized:"Broadway from Battery Pl to Park Row (Canyon of Heroes)",avenue:null,street:null},affects:["pedestrians","vehicles"],photo_reading:"Daytime indoor ceremony with a trophy. Not a street scene, not at night.",
+     checks:[{name:"Time",result:"fail",note:"Photo is in daylight but posted at 11:40 PM"},{name:"Place",result:"fail",note:"Downtown, outside tonight's Midtown area"},{name:"Media",result:"fail",note:"Looks like the June 18 championship ceremony"},{name:"Source",result:"warn",note:"Fan account with a high repost volume"},{name:"Consistency",result:"fail",note:"No parade is scheduled tonight"}],
+     verdict:"reject",confidence:.05,public_summary:"Not shown: recycled photo from a past celebration."}},
+  {name:"Reddit · PATH",text:"r/nyc · u/hoboken_commuter · 11:43 PM\n\"anyone know if PATH at 33rd is open? herald sq is a sea of orange, cops funneling everyone toward 6th, cant get near the stairs\"",
+   saved:{relevant:true,type:"crowd",title:"PATH 33 St entrance blocked by crowd",location:{as_written:"PATH at 33rd / herald sq",normalized:"33 St PATH station, 6th Ave & W 33rd St",avenue:"6",street:33},affects:["pedestrians","PATH riders"],photo_reading:"",
+     checks:[{name:"Time",result:"pass",note:"After the buzzer"},{name:"Place",result:"pass",note:"Named station inside the area"},{name:"Media",result:"warn",note:"No photo"},{name:"Source",result:"pass",note:"Account history fits a NJ commuter"},{name:"Consistency",result:"pass",note:"Agrees with the Herald Sq cluster (38 reports)"}],
+     verdict:"use",confidence:.88,public_summary:"PATH 33 St entrance blocked by crowd. Use NJ Transit at Moynihan."}}
+];
+const CONTEXT=`Tonight the Knicks won the NBA championship. Final buzzer 11:21 PM; it is now about 11:48 PM. Watch area: Midtown Manhattan around Madison Square Garden (W 23rd–W 50th St, 11th Ave–Lexington Ave), including Herald Sq, Times Sq and Hell's Kitchen. No parade is scheduled tonight (the championship parade and City Hall ceremony were downtown on June 18, 2026, in daytime).
+Known official items: 7th Ave closed W 30th–35th (NYPD 11:31 PM); W 33rd St closed 8th–6th Ave (NYPD 11:34 PM); 34 St–Penn 1/2/3 entrances closed (MTA 11:38 PM); police activity at W 42nd St & Broadway (NYPD 11:40 PM).`;
+let sample=null,imgOK=false,presetIdx=0,presetBlob=null;
+
+async function analyze(text,file,whereNote){
+  const prompt=`You are the intake analyst for a NYC crowd-night street closure map. Turn one public post (and its photo, if attached) into a structured record, and judge whether it is real, current, and about tonight's area.
+${CONTEXT}
+${whereNote||""}
+
+Rules: give the place exactly as written, then normalize it to a real NYC block, intersection or landmark. For avenue use one of "11","10","9","8","7","6","5","Mad","Park","Lex" or null; for street give the W/E street number (22–50) or null. Never invent coordinates. If a photo is attached, describe what it actually shows (signs, landmarks, day or night, crowd, barricades) and check it against the caption. Look for signs of a stale post or a different event: daylight at midnight, ticker tape, a location outside the area, recycled media, bot-like text. Dangerous claims (bomb, shooting, stampede) get verdict "corroborate" and are never published from social media alone.
+
+Reply with only JSON:
+{"relevant":true,"type":"closure|crowd|transit|hazard|police|all_clear|other","title":"max 60 chars","location":{"as_written":"","normalized":"","avenue":"8","street":26},"affects":["pedestrians"],"photo_reading":"one sentence or empty","checks":[{"name":"Time","result":"pass|warn|fail","note":"short"},{"name":"Place","result":"","note":""},{"name":"Media","result":"","note":""},{"name":"Source","result":"","note":""},{"name":"Consistency","result":"","note":""}],"verdict":"use|corroborate|reject","confidence":0.0,"public_summary":"max 90 chars, plain words, for people walking home"}
+
+POST:
+${text.slice(0,4000)}`;
+  const opts={modelTier:"default"};
+  if(file&&imgOK)opts.images=[file];
+  const r=await sample.json(prompt,opts);
+  if(!r||typeof r!=="object")throw{code:"invalid_json"};
+  return r;
+}
+const ERR={not_granted:"Claude access wasn't allowed in this view. The example posts show saved results.",rate_limited:"Too many requests just now. Try again in a minute.",invalid_json:"The answer came back in the wrong format. Try again.",image_rejected:"That photo couldn't be read. Try a JPEG or PNG.",refused:"Claude declined this input. Try a different post."};
+let uid=0;
+function now(){return "11:"+String(48+Math.min(uid,11)).padStart(2,"0")+" PM"}
+function ingest(rec,{photoURL,origin}){
+  uid++;
+  const a=rec.location&&rec.location.avenue!=null?String(rec.location.avenue):null, s=rec.location&&+rec.location.street;
+  let at=a&&s&&GRID[a+"|"+s]?GRID[a+"|"+s]:null;
+  if(!at&&origin==="public")at=lerp(PL.YOU,G("8|31"),.15+Math.random()*.2);
+  const verdict=rec.verdict;
+  const userPhoto=photoURL?{src:photoURL}:null;
+  let evId=null;
+  if(verdict!=="reject"&&at){
+    evId="u"+uid;
+    EV.push({id:evId,kind:"point",at,trust:"unverified",title:rec.title||rec.public_summary,detail:rec.public_summary||"",src:origin==="public"?"Your report":"1 post",time:now(),userPhoto});
+  }
+  QUEUE.unshift({ev:evId,rejected:verdict==="reject",isNew:true,title:rec.title||rec.public_summary||"New post",
+    srcs:(origin==="public"?"Report sent through Way Home":"Live intake")+(photoURL?" · 1 photo":"")+" · "+now(),
+    conf:Math.max(0,Math.min(1,+rec.confidence||0)),
+    read:[rec.location&&rec.location.as_written?`“${rec.location.as_written}” → ${rec.type||"other"} · ${rec.location.normalized||"place unclear"}`:"",rec.photo_reading?`Photo: ${rec.photo_reading}`:""].filter(Boolean).join(" · "),
+    checks:(rec.checks||[]).map(c=>[c.result,c.name,c.note]),userPhoto,
+    effect:verdict==="reject"?"Held back. Not shown to the public.":"Added to the map as Unverified. It will be confirmed automatically if more reports agree."});
+  render(false);
+  return {evId,at};
+}
+
+function renderPresets(){document.getElementById("presets").innerHTML=PRESETS.map((p,i)=>`<button data-p="${i}">${p.name}</button>`).join("")}
+async function loadPreset(i){
+  presetIdx=i;const p=PRESETS[i];document.getElementById("post").value=p.text;
+  document.getElementById("opPhoto").value="";presetBlob=null;
+  const box=document.getElementById("presetImg");
+  if(p.photo){box.innerHTML=`<div class="qimg" style="margin-top:8px"><img src="${PHOTOS[p.photo].src}" alt="" style="height:110px"><div class="credit">Attached photo · ${credit(PHOTOS[p.photo]).replace(/<[^>]+>/g,"")}</div></div>`;
+    try{presetBlob=await (await fetch(PHOTOS[p.photo].src)).blob()}catch(_){presetBlob=null}}
+  else box.innerHTML="";
+}
+
+/* ---------- render + wiring ---------- */
+function render(fit){drawEvents();drawRoute(fit);renderAnswer();renderFeed();renderQueue()}
+document.querySelector("nav.tabs").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-tab]");if(!b)return;
+  for(const t of document.querySelectorAll("nav.tabs button"))t.setAttribute("aria-selected",t===b);
+  for(const id of ["pitch","home","ops","plan"])document.getElementById(id).hidden=id!==b.dataset.tab;
+  S.tab=b.dataset.tab;
+  if(S.tab==="home")setTimeout(()=>{map.invalidateSize();drawRoute(true)},30);
+});
+document.getElementById("dests").addEventListener("click",e=>{const b=e.target.closest("button[data-d]");if(!b)return;S.dest=b.dataset.d;drawRoute(true);renderAnswer()});
+document.getElementById("feed").addEventListener("click",e=>{const b=e.target.closest("[data-ev]");if(b)openEvent(b.dataset.ev)});
+document.querySelector(".seg").addEventListener("click",e=>{const b=e.target.closest("[data-base]");if(!b)return;S.base=b.dataset.base;
+  for(const x of document.querySelectorAll(".seg button"))x.setAttribute("aria-pressed",x===b);syncBase()});
+document.getElementById("play").addEventListener("click",e=>{
+  const c6=ev("c6");if(c6.trust!=="unverified")return;
+  S.dest="brooklyn";c6.trust="confirmed";c6.src="7 reports · 3 platforms · 1 photo";c6.detail="7 independent reports in 5 minutes agree. Routes now avoid it.";c6.time="11:49 PM";
+  const q=QUEUE.find(q=>q.ev==="c6");q.srcs="5 posts (X, Reddit, Citizen) · 1 photo · 2 calls to 311 · first seen 11:42 PM";q.conf=.82;
+  q.checks[2]=["pass","Media","New photo shows a 'W 26 St' sign behind police cars"];q.checks[3]=["pass","Source","7 independent accounts on 3 platforms"];q.checks[4]=["warn","Corroboration","Auto-confirmed by reports; no official source yet"];
+  e.target.disabled=true;e.target.textContent="11:49 PM · reports confirmed";render(true);
+});
+document.getElementById("queue").addEventListener("click",e=>{
+  const ok=e.target.closest("[data-ok]"),no=e.target.closest("[data-no]");const b=ok||no;if(!b)return;
+  const q=QUEUE[+(b.dataset.ok??b.dataset.no)];const evt=q.ev&&ev(q.ev);if(!evt)return;
+  evt.trust=ok?"official":"dismissed"; if(ok){evt.src=evt.src.replace(/^\d+ reports?/,m=>m)+" · confirmed by NYC Emergency Management";evt.time=S.updated}
+  render(false);
+});
+document.getElementById("presets").addEventListener("click",e=>{const b=e.target.closest("[data-p]");if(b)loadPreset(+b.dataset.p)});
+document.getElementById("opPhoto").addEventListener("change",()=>{presetBlob=null;document.getElementById("presetImg").innerHTML=""});
+document.getElementById("analyze").addEventListener("click",async e=>{
+  const btn=e.target,text=document.getElementById("post").value.trim();if(!text)return;
+  const f=document.getElementById("opPhoto").files[0]||presetBlob||null;
+  const photoURL=f?(document.getElementById("opPhoto").files[0]?URL.createObjectURL(f):PHOTOS[PRESETS[presetIdx].photo]?.src):null;
+  const note=document.getElementById("aiNote");
+  const saved=PRESETS.find(p=>p.text===text);
+  if(!sample){if(saved){ingest(saved.saved,{photoURL,origin:"ops"});note.textContent="Showing a saved AI result (live AI isn't available in this view)."}else note.textContent="Live AI isn't available in this view. Try one of the example posts.";return}
+  btn.disabled=true;note.textContent="Reading the post"+(f?" and photo":"")+"… checking time, place, media, source.";
+  try{const rec=await analyze(text,f);ingest(rec,{photoURL,origin:"ops"});note.textContent="Done. The result is at the top of the queue.";}
+  catch(err){note.textContent=ERR[err&&err.code]||"Something went wrong reaching Claude. Try again."}
+  finally{btn.disabled=false}
+});
+document.getElementById("reportToggle").addEventListener("click",()=>{const f=document.getElementById("reportForm");f.hidden=!f.hidden;if(!f.hidden)document.getElementById("rptText").focus()});
+document.getElementById("rptSend").addEventListener("click",async e=>{
+  const btn=e.target,text=document.getElementById("rptText").value.trim(),f=document.getElementById("rptPhoto").files[0]||null;
+  if(!text&&!f)return;
+  const out=document.getElementById("rptResult"),photoURL=f?URL.createObjectURL(f):null;
+  const where="This is a report sent through the Way Home page. The reporter's phone location is near 7th Ave & W 31st St; use it if the text doesn't name a place.";
+  btn.disabled=true;out.innerHTML=`<div class="result">Reading your report${f?" and photo":""}…</div>`;
+  let rec;
+  try{
+    if(!sample)throw{code:"no_ai"};
+    rec=await analyze(text||"(photo only, no caption)",f,where);
+  }catch(err){
+    rec={verdict:"corroborate",title:text.slice(0,60)||"Photo report near you",public_summary:text.slice(0,90),location:{avenue:null,street:null},checks:[{name:"Time",result:"pass",note:"Sent just now"},{name:"Place",result:"pass",note:"Phone location attached"}],confidence:.3};
+  }
+  const res=ingest(rec,{photoURL,origin:"public"});
+  const v=rec.verdict==="reject";
+  out.innerHTML=`<div class="result"><b>Thanks, we got it.</b>${rec.location&&rec.location.normalized?`<span>We understood: <b>${esc(rec.title||rec.type)}</b> at ${esc(rec.location.normalized)}.</span>`:""}
+    ${v?`<span>It doesn't match tonight's area or time, so it won't change any routes.</span>`:`<span>It's on the map as <span class="chip unverified">Unverified</span>. If 2 more people nearby report the same, routes will avoid it.</span>`}</div>`;
+  document.getElementById("rptText").value="";document.getElementById("rptPhoto").value="";btn.disabled=false;
+  if(res.evId)openEvent(res.evId);
+});
+
+const slides=[...document.querySelectorAll(".slide")];let cur=0;
+function showSlide(i){cur=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,j)=>s.classList.toggle("on",j===cur));
+  document.getElementById("dots").innerHTML=slides.map((_,j)=>`<i class="${j===cur?"on":""}"></i>`).join("")}
+document.getElementById("prev").onclick=()=>showSlide(cur-1);
+document.getElementById("next").onclick=()=>showSlide(cur+1);
+document.addEventListener("keydown",e=>{if(S.tab!=="pitch"||e.target.closest("textarea,input"))return;if(e.key==="ArrowRight")showSlide(cur+1);if(e.key==="ArrowLeft")showSlide(cur-1)});
+
+showSlide(0);renderPresets();loadPreset(0);
+map.setView(PL.YOU,15.5);syncBase();render(false);
+
+(async()=>{
+  if(!window.claude?.use)return;
+  try{sample=await claude.use("sample")}catch(_){sample=null}
+  if(!sample){document.getElementById("aiNote").textContent="Live AI isn't available in this view, so the example posts show saved AI results.";return}
+  try{const l=await sample.limits();imgOK=!!l?.images}catch(_){}
+})();
+</script>
