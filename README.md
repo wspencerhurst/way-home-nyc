@@ -1,6 +1,6 @@
 # Way Home NYC
 
-A live street map for big crowd nights in NYC. It reads official alerts and what people post, checks what's real, and reroutes everyone on foot in real time.
+**AI reads posts, photos & official alerts, fact-checks them, and maps closures by trust level. When reports agree, routes home on foot update live. Unlike Waze: no app, any platform, city-verified.**
 
 **Live demo:** https://claude.ai/artifact/HhPQ8ebmMaLTqQfuDRpGKU
 
